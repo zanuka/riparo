@@ -1,0 +1,23 @@
+---
+description: Grounded, small-diff agent sessions for Riparo
+alwaysApply: true
+---
+
+# Agent sessions
+
+Start by reading `README.md` and listing `src/`.
+Do not scan `node_modules`, `dist`, or coverage.
+
+Restate the user goal in one sentence, then touch only files required.
+
+Prefer editing existing stubs over new abstractions.
+
+Run `pnpm typecheck` and `pnpm test` after code changes.
+Do not start long watch processes.
+
+If blocked on product decisions (advisory source, semver policy, monorepo support), ask — do not guess.
+
+Keep answers short.
+Put detail in code and README, not in new markdown files.
+
+Do not add README sections, badges, or architecture diagrams unless asked.

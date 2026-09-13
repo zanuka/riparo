@@ -1,0 +1,42 @@
+---
+description: What Riparo is, current scaffold phase, and command/module map
+alwaysApply: true
+---
+
+# Riparo
+
+Riparo monitors npm dependency advisories, applies the smallest safe fix, verifies with no-mistakes, and opens a focused security PR.
+
+It is not a general Dependabot replacement for all ecosystems. npm first.
+
+## Current phase
+
+This repo is a scaffold.
+Implement behind `--dry-run`.
+Do not claim working scan, patch, verify, or PR behavior until the matching stub actually does the work.
+
+Read `README.md` before expanding scope.
+
+Prefer the smallest diff.
+Do not invent config formats, config keys, or package names until asked.
+
+## Commands and modules
+
+Commands and modules map 1:1:
+
+| Command | Module |
+|---------|--------|
+| `scan` | `src/scan/` |
+| `patch` | `src/patch/` |
+| `verify` | `src/verify/` |
+| `pr` | `src/pr/` |
+
+Keep `src/cli.ts` as a thin argument router.
+
+## Verification
+
+[no-mistakes](https://github.com/kunchenguid/no-mistakes) is the verification gate for “the patch worked and the PR is clean”.
+Do not reimplement that pipeline.
+
+Never push to origin as part of an agent task.
+Verification goes through no-mistakes when that path exists.

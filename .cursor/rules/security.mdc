@@ -1,0 +1,16 @@
+---
+description: Advisory data, lockfile writes, secrets, and dry-run defaults
+alwaysApply: true
+---
+
+# Security
+
+This repo will handle advisory data and lockfile writes.
+Treat that as sensitive automation.
+
+- Never commit `.env`, tokens, npm tokens, GitHub PATs, or real audit dumps
+- Default to dry-run for any command that would mutate `package.json`, lockfiles, git, or remotes
+- Do not phone home; no telemetry
+- Do not fetch advisories in tests unless fixtures are checked in
+- When implementing later: pin sources, record provenance (advisory id, affected range, chosen version)
+- Agent sessions must not run `npm publish`, force-push, or `git push origin`

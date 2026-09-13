@@ -1,0 +1,15 @@
+---
+description: ESM TypeScript, Node 20+, Vitest, and layout conventions
+globs: "**/*.{ts,tsx,js,mjs,cjs,json}"
+alwaysApply: false
+---
+
+# TypeScript
+
+- ESM, Node 20+, strict TypeScript
+- No `any` without a one-line justification comment
+- Named exports; keep `src/cli.ts` thin
+- Vitest for tests; colocate `*.test.ts` next to the unit or under `src/`
+- Do not import from `dist/`
+- Do not add frameworks or UI libraries
+- Match existing file layout before creating new folders
